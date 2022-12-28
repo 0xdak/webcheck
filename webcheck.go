@@ -59,5 +59,6 @@ func main() {
 	fmt.Print(counter)
 	fmt.Print("/")
 	fmt.Print(len(domains_list) - 1)
+	fmt.Print(" domains are alive")
 
 }
