@@ -28,7 +28,7 @@ func check_host(host string, wg *sync.WaitGroup) {
 		}
 	}
 	fmt.Print(strings.Join(alive_hosts, "\n") + "\n")
-	counter += len(alive_hosts)
+	counter += 1
 }
 
 func main() {
