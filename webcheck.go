@@ -22,13 +22,16 @@ func check_host(host string, wg *sync.WaitGroup) {
 	for _, prefix := range prefixs {
 		resp, err := client.Get(prefix + host)
 		if err != nil {
-			return
+			continue
 		} else {
 			alive_hosts = append(alive_hosts, strconv.Itoa(resp.StatusCode)+" : "+prefix+host)
 		}
 	}
-	fmt.Print(strings.Join(alive_hosts, "\n") + "\n")
-	counter += 1
+	if len(alive_hosts) != 0 {
+		fmt.Print(strings.Join(alive_hosts, "\n") + "\n")
+		counter += 1
+
+	}
 }
 
 func main() {
